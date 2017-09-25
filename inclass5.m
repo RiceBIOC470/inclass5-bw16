@@ -1,3 +1,5 @@
+%AW: see comment below 0.8/1.
+
 %Inclass assignment 5. 
 
 % 1. (a) Write a function that reads in an image and displays it so that 1%
@@ -16,6 +18,10 @@ end
 % black or white are equal and can be specified as a second input to this
 % function. 
 
+% AW: this doesn't work as expected. It decreases rather than 
+%increases contrast with increasing y. 
+% should be aj = imadjust(Im, stretchlim(Im, [x 1-x]));
+% -0.2.
 function output=adjust(img,y)
 Im=imread(img);
 aj=imadjust(Im,stretchlim(Im),[y 1-y]);
